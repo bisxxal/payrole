@@ -1,3 +1,6 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 @import "tailwindcss";
 
 :root {
@@ -5,22 +8,24 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+color: white  ;
+}
+.base{
+  background-color: #3352cc;
+}
+.textbase{
+  color: #3352cc;
+}
+.buttonbg{
+  /* @apply bg-gradient-to-br text-white rounded-full   from-[#3352CC] font-medium to-[#1C2D70]; */
+  background: linear-gradient(90deg, #3352CC 0%, #1C2D70 100%);
+  /* border-radius: 9999px; */
+  padding: 10px;
+  border-radius: 9999px;
+  color: white;
+  background-color: #3352cc;
+  margin-top: 10px;
 }
