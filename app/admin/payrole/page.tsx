@@ -7,14 +7,17 @@ const PayRole = async() => {
 
   const payrole = await AllPayrole()
   return (
-    <div className=' w-full'    >
-        <h1 className=' text-center font-bold text-4xl'>Payrole</h1>
+    <div className=' w-full flex px-5 justify-between '>
+      <div className=' w-1/2 max-md:w-full'>
         <PayroleAdmin  emp={emp}/>
+      </div>
 
-        <div>
+      <div className=' w-1/2 max-md:w-full'>
+
+          <h1 className=' text-center text-4xl font-bold  my-10 '> List of payroles </h1>
           {
           payrole &&  payrole.payrole.map((item:any) => (
-              <div key={item.id} className=' border-2 p-4 m-4'>
+              <div key={item.id} className='  bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto mb-5 w-5/6'>
                 <h1 className=' text-2xl font-bold'>{item.user.name}</h1>
                 <p>Salary: {item.salary}</p>
                 <p>Deduction: {item.deduction}</p>

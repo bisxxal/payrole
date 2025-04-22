@@ -10,7 +10,7 @@ const AttendanceAdmin =async () => {
         {
            data && data.data.map((item:any)=>{
                 return(
-                    <div key={item.userId} className=' w-5/6  my-5 mx-auto border'>
+                    <div key={item.userId} className='  bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto mb-5 w-5/6 '>
                         <h1>emp id {item.userId}</h1>
                         <p>In time {item.checkIn}</p>
                         <p>Out time {item?.checkOut}</p>

@@ -12,10 +12,12 @@ const LeavesEMPPage = async() => {
     <div>
         <LeavesEmpForm  />
 
+
+      <h1 className=' text-center text-3xl font-bold mt-20'> List Of your Leaves</h1>
         {
           leaves.leaves.map((leave:any) => {
             return (
-              <div key={leave.id} className=' border-2 p-4 m-4'>
+              <div key={leave.id} className=' bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto mb-5 w-5/6 mt-5'>
                 <h1 className=' text-2xl font-bold'>{leave.leave_type}</h1>
                 <p className=' text-gray-500'>Status : {leave.leave_status}</p>
                 <p className=' text-gray-500'>Total Days : {leave.total_days}</p>

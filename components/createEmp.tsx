@@ -42,18 +42,18 @@ const CreateEmp = () => {
     <div className=' w-full '>
         
         <h1 className=' text-center font-bold text-4xl'>Create Employee</h1>
-        <form  action={onSumbit} className=' !text-white w-[80%] mx-auto mt-20 p-4'>
+        <form  action={onSumbit} className=' bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto w-1/2 max-md:w-5/6 mt-20'>
             <div className=' flex flex-col gap-4'>
-                <input name='name' type="text" placeholder='name' className=' text-white bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' />
-                <input name='username' type="text" placeholder='userName' className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' />
-                <input name='password' type="password" placeholder='password' className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' />
-                <input name='email' type="email" placeholder='email' className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' />
-                <input name='phone' type="number" placeholder='department' className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' />
-                <input name='salary' type="number" placeholder='salary' className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' />
-                <input  type="text" name='des'className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' placeholder='deg'/>
-                <input className=' bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' name="joining_date" type="datetime-local" placeholder='date' />
+                <input name='name' type="text" placeholder='name' className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='username' type="text" placeholder='userName' className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='password' type="password" placeholder='password' className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='email' type="email" placeholder='email' className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='phone' type="number" placeholder='department' className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='salary' type="number" placeholder='salary' className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input  type="text" name='des'className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' placeholder='deg'/>
+                <input className=' bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' name="joining_date" type="datetime-local" placeholder='date' />
 
-                <select className='bg-transparent py-2 mt-4 border-2 border-gray-300 p-2' name="role" id="">
+                <select className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' name="role" id="">
                     <option value="admin">Admin</option>
                     <option value="emp">Employee</option>
                 </select>

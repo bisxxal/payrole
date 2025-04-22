@@ -28,22 +28,23 @@ const PayroleAdmin = ({emp}:any) => {
         router.refresh()
     }
   return (
-    <div className=' border-2 '>
-        <form action={onSumbit} className=' w-[80%] mx-auto mt-20 p-4'>
+    <div className=' w-full '>
+          <h1 className=' text-center font-bold text-4xl'>Create Payrole</h1>
+        <form action={onSumbit} className=' bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto w-1/2 max-md:w-5/6 mt-20'>
             <div className=' flex flex-col gap-4'>
-                <input name='paymentDate'  type="datetime-local"  className=' bg-transparent border-2 border-gray-300 p-2'/>
-                <input name='salary' type="number" placeholder='salary' className=' bg-transparent border-2 border-gray-300 p-2' />
-                <input name='deduction' type="number" placeholder='deduction' className=' bg-transparent border-2 border-gray-300 p-2' />
-                <input name='net' type="number" placeholder='Net salary' className=' bg-transparent border-2 border-gray-300 p-2' />
-                <input name='bonus' type="number" placeholder='Bonus' className=' bg-transparent border-2 border-gray-300 p-2' />
+                <input name='paymentDate'  type="datetime-local"  className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2'/>
+                <input name='salary' type="number" placeholder='salary' className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='deduction' type="number" placeholder='deduction' className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='net' type="number" placeholder='Net salary' className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
+                <input name='bonus' type="number" placeholder='Bonus' className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2' />
 
-                <select name="status"  className=' bg-transparent border-2 border-gray-300 p-2'>
+                <select name="status"  className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2'>
                     <option value="paid">Paid</option>
                     <option value="unpaid">Unpaid</option>
                     <option value="pending">Pending</option>
                 </select>
 
-                <select name="userId" className=' bg-transparent border-2 border-gray-300 p-2'>
+                <select name="userId" className='bg-transparent border-2 rounded-3xl border-[#ffffff2b] p-2'>
                     {
                         emp.map((item:any) => (
                             <option key={item.id} value={item.id}>{item.name}</option>

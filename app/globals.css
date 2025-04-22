@@ -1,7 +1,6 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-@import "tailwindcss";
+
+@import "tailwindcss"; 
+
 
 :root {
   --background: #ffffff;
@@ -20,12 +19,11 @@ color: white  ;
   color: #3352cc;
 }
 .buttonbg{
-  /* @apply bg-gradient-to-br text-white rounded-full   from-[#3352CC] font-medium to-[#1C2D70]; */
   background: linear-gradient(90deg, #3352CC 0%, #1C2D70 100%);
-  /* border-radius: 9999px; */
   padding: 10px;
   border-radius: 9999px;
   color: white;
   background-color: #3352cc;
   margin-top: 10px;
 }
+ 

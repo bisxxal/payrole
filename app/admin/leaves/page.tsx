@@ -9,8 +9,6 @@ const LeavesPage = async() => {
     <div className=' w-full'>
 
         <h1 className=' text-4xl font-bold text-center my-10'>Leaves form</h1>
-        
-       
 
         <ApproveForm leaves={leaves} />
 

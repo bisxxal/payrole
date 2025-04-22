@@ -21,7 +21,7 @@ const ApproveForm = ({leaves}:any) => {
          {
           leaves.leaves.map((leave:any) => {
             return (
-              <form  action={onSumbit} key={leave.id} className=' border-2 p-4 m-4'>
+              <form  action={onSumbit} key={leave.id} className='  bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto mb-5 w-5/6'>
                 <input className=' bg-transparent' name='id' type="text" value={leave.id} readOnly />
                 <h1 className=' text-2xl font-bold'>{leave.leave_type}</h1>
                 <p className=' text-gray-500'>Status : {leave.leave_status}</p>
