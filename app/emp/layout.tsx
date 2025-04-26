@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Employees",
+  title: "Payrole | Employee",
   description: "Manage your employees",
 };
 
@@ -16,6 +16,10 @@ export default async function RootLayout({
    const user = await currentUser();
      const role = user?.publicMetadata.role
      const name =  user?.username
+
+    //  if(role !== "emp" || !user) {
+    //   redirect("/");
+    // }  
   return (
     <html lang="en">
       <body>

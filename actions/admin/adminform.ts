@@ -36,6 +36,9 @@ export const AllEmp = async () => {
         const emp = await prisma.user.findMany({
             where:{
                 role:'emp'
+            },
+            orderBy:{
+                createdAt:'desc'
             }
         })
 
@@ -96,9 +99,6 @@ export const adminCreatePayrole = async (paymentDate:string , salary:string , de
                 userId:userId
             }
         })
-        // if(payrole){
-        //     return JSON.parse(JSON.stringify({staus:true , message:'Payrole Created' ,payrole}))
-        // }
         console.log(payrole)
     } catch (error) {
         handelError(error , 'create payrole')
@@ -111,7 +111,6 @@ export const AllPayrole = async () => {
     try {
             const payrole = await prisma.payrole.findMany({
                 include:{
-
                     user:{
                         select:{
                             name:true,
@@ -119,7 +118,10 @@ export const AllPayrole = async () => {
                             phoneNumber:true
                         }
                     }
-                }         
+                },
+                orderBy:{
+                    createdAt:'desc'
+                } 
             })
             return JSON.parse(JSON.stringify({staus:true , message:'Employee Created' ,payrole}))
     } catch (error) {
@@ -168,7 +170,10 @@ export const AllLeaves = async (id?:string) => {
                             phoneNumber:true
                         }
                     }
-                }
+                },
+                orderBy:{
+                    createdAt:'desc'
+                } 
             })
             return JSON.parse(JSON.stringify({staus:true , message:'Employee Created' ,leaves}))
         }
@@ -182,7 +187,10 @@ export const AllLeaves = async (id?:string) => {
                         phoneNumber:true
                     }
                 }
-            }
+            },
+            orderBy:{
+                createdAt:'desc'
+            } 
         })
         return JSON.parse(JSON.stringify({staus:true , message:'Employee Created' ,leaves}))
         }
@@ -201,7 +209,8 @@ export const ApproveFOrm = async (id:string) => {
             data:{
                 leave_status:'Approved',
                 status:'Approved'
-            }
+            },
+            
         })
         console.log(res)
         return JSON.parse(JSON.stringify({staus:true , message:'Employee Created' ,res}))
@@ -236,11 +245,32 @@ export const createAttendance  =  async (inTime:string , OutTime:string, total:s
 
 export const allAttendance = async ()=>{
     try {
-        const data  = await prisma.attendance.findMany({})
+        const data  = await prisma.attendance.findMany({orderBy:{
+            createdAt:'desc'
+        } })
 
         return JSON.parse(JSON.stringify({data}))
 
     } catch (error) {
         
+    }
+}
+
+export const paySleveById = async () => {
+    const user = await currentUser()
+
+    console.log(user?.id)
+    try {
+        const data = await prisma.payrole.findMany({
+            where:{
+                userId:user?.id as string
+            },
+            orderBy:{
+                createdAt:'desc'
+            } 
+        })
+        return JSON.parse(JSON.stringify({data}))
+    } catch (error) {
+        handelError(error , 'pay sleve by id')
     }
 }

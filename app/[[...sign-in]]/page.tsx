@@ -18,17 +18,18 @@ const LoginPage = () => {
   }, [user, router]);
 
   return (
-    <div className="h-screen  flex items-center justify-center  overflow-hidden">
+    <div className="h-screen w-full flex items-center justify-center  overflow-hidden">
  
       { !user && 
-      <SignIn.Root>
+      <SignIn.Root >
      <div className=" w-full h-full flex items-center relative justify-around">
        
 
         <SignIn.Step name="start">
-          <header className="text-center">
        
-            <h1 className="mt-4 max-md:text-2xl text-5xl logo font-medium tracking-tight ">
+         <div className=' bg-zinc-800 p-4 rounded-3xl w-[500px]'>
+         <header className="text-center ">
+            <h1 className="my-4 max-md:text-2xl text-5xl logo font-medium tracking-tight ">
               Sign in to your account
             </h1>
           </header>
@@ -51,6 +52,7 @@ const LoginPage = () => {
             submit className="w-full !border-none rounded-2xl bg-zinc-9 buttonbg hover:scale-105 transition-all mt-5 h-12 text-xl px-3.5 py-2 text-center font-medium text-white shadow !outline-none  hover:bg-zinc-800 focus-visible:outline-[1.5px] focus-visible:outline-offset-2 focus-visible:outline-zinc-500 active:text-white/70">
             Sign In
           </SignIn.Action>
+         </div>
         
         </SignIn.Step>
 

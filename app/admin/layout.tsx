@@ -5,7 +5,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { LogginUser } from "@/actions/admin/adminform";
 
 export const metadata: Metadata = {
-  title: "Admin",
+  title: "Patrole | Admin",
 };
 
 export default async function RootLayout({
@@ -19,6 +19,9 @@ export default async function RootLayout({
   const role = user?.publicMetadata.role
   const name =  user?.username
 
+  // if(role !== "admin" || !user) {
+  //   redirect("/");
+  // }
   return (
     <html lang="en">
       <body>
