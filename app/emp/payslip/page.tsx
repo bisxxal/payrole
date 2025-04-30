@@ -5,7 +5,7 @@ import moment from 'moment';
 
 const PaySleve =async () => {
     const data = await paySleveById()
-    console.log(data)
+
   return (
 <div className="w-full">
     <h1 className="text-3xl font-bold text-center mt-10">Payslip</h1>
@@ -13,10 +13,10 @@ const PaySleve =async () => {
         {
             data?.data?.map((item:any , index:number) => (
 
-                <div className=' flex flex-col items-center justify-center ' key={index}>
+                <div className=' flex flex-col items-center justify-center  ' key={index}>
                       
 
-                <div key={index}   id={`recipt${index}`} className="bg-white text-black rounded-3xl p-5 flex flex-col mx-auto w-1/2 max-md:w-5/6 mt-20">
+                <div key={index}   id={`recipt${index}`} className="bg-white text-black border rounded-3xl p-5 flex flex-col mx-auto w-1/2 max-md:w-5/6 mt-20">
                     <div className="grid grid-cols-2 gap-6">
                         <label>Payslip ID</label><p>{item.id}</p>
                         <label>Employee ID</label><p>{item.userId}</p>

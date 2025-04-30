@@ -8,17 +8,34 @@ const PayRole = async() => {
 
   const payrole = await AllPayrole()
   return (
-    <div className=' w-full flex px-5 justify-between '>
-      <div className=' w-1/2 max-md:w-full'>
+    <div className=' w-full  px-5  '>
+      <div className=' w-full'>
         <PayroleAdmin  emp={emp}/>
       </div>
 
-      <div className=' w-1/2 max-md:w-full'>
+      <div className=' w-full '>
 
           <h1 className=' text-center text-4xl font-bold  my-10 '> List of payroles </h1>
-          {
+          
+          <div>
+          <div className='grid grid-cols-10  bg-zinc-200 rounded-xl p-5  mx-auto mb-2 w-[90%] capitalize'>
+                <p>User name</p>
+                <p>user id</p>
+                <p>Salary</p>
+                <p>Deduction</p>
+                <p>Net Salary</p>
+                <p>Bonus</p>
+                <p>Status</p>
+                <p>Payment Date</p>
+                <p>Created At</p>
+                <p>Employee Email</p>
+            </div>
+          </div>
+
+          <div className='  bg-zinc-200 mb-1 border border-[#00000038] rounded-xl overflow-hidden w-[90%] mx-auto'>  
+{
           payrole &&  payrole.payrole.map((item:any) => (
-              <div key={item.id} className='  bg-zinc-800 rounded-3xl p-5 flex flex-col gap-2 mx-auto mb-5 w-5/6'>
+              <div key={item.id} className='  p-5 grid grid-cols-10  gap-2 mb-1 border-b border-[#00000038] mx-auto  w-full'>
                 <h1 className=' text-2xl font-bold'>{item.user.name}</h1>
                 <p>User ID: {item.userId}</p>
                 <p>Salary: {item.salary}</p>
@@ -32,6 +49,8 @@ const PayRole = async() => {
           </div>
                 ))
           }
+          </div>
+          
         </div>
     </div>
   )

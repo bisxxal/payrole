@@ -7,25 +7,33 @@ const page = async() => {
     const data2 = await AllEmp()
   return (
     <div className=' w-full min-h-screen'>
-        
-        <h1 className=' text-center font-bold text-4xl'>Employee Details </h1>
-        <div className=' mx-auto mt-20 p-4'>
-            {
+             <CreateEmp />
+        <div className=' mx-auto mt-10 p-4'>
+        <h1 className=' my-10 text-center font-bold text-4xl'>Employee Details </h1>
+
+            <div className='grid grid-cols-6  bg-zinc-200 rounded-xl p-5  mx-auto mb-2 w-[90%] capitalize'>
+                <p>name</p>
+                <p>email</p>
+                <p>phone no</p>
+                <p>salary</p>
+                <p>role</p>
+                <p>joining date</p>
+            </div>
+           <div className='  bg-zinc-200 mb-1 border border-[#0000003d]  rounded-xl overflow-hidden w-[90%] mx-auto'>  
+           {
                 data2.map((item:any) => (
-                    <div key={item.id} className='  bg-zinc-800 rounded-3xl p-5 flex flex-col mx-auto mb-5 w-5/6'>
+                    <div key={item.id} className='  p-4 grid grid-cols-6 mx-auto border-[#00000038]  border-b w-full'>
                         <h2 className=' text-xl font-bold'>{item.name}</h2>
-                        <p>email: {item.email}</p>
-                        <p>PhoneNo: {item.phoneNumber}</p>
-                        <p>Salary: ${item.salary}</p>
-                        <p>role {item.role}</p>
-                        <p>joining_date { moment( item.joining_date).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                        <p> {item.email}</p>
+                        <p>{item.phoneNumber}</p>
+                        <p>₹{item.salary}</p>
+                        <p> {item.role}</p>
+                        <p>{ moment( item.joining_date).format('MMMM Do YYYY, h:mm:ss a')}</p>
                     </div>
                 ))
             }
+           </div>
         </div>
-
-
-        <CreateEmp />
     </div>
   )
 }

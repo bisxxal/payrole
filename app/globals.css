@@ -1,17 +1,10 @@
 
 @import "tailwindcss"; 
-
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-
-body {
+ 
+/* body {
   background-color: black;
 color: white  ;
-}
+} */
 .base{
   background-color: #3352cc;
 }
@@ -19,7 +12,7 @@ color: white  ;
   color: #3352cc;
 }
 .buttonbg{
-  background: linear-gradient(90deg, #3352CC 0%, #1C2D70 100%);
+  background: linear-gradient(90deg, #7b96ff 0%, #2b55ff 100%);
   padding: 10px;
   border-radius: 9999px;
   color: white;
